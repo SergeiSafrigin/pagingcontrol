@@ -23,11 +23,9 @@ Here's the complete example from the above gif:
   <Window class="container" >
     <Widget id="paging" src="de.manumaticx.pagingcontrol" onSelect="tabHandler" />
     <ScrollableView id="scrollableView">
-      <View title="Yellow" backgroundColor="yellow" />
-      <View title="Orange" backgroundColor="orange" />
-      <View title="Red" backgroundColor="red" />
-      <View title="Purple" backgroundColor="purple" />
-      <View title="Blue" backgroundColor="blue" />
+      <View title="Yellow" backgroundColor="yellow" icon = "/images/icon1.png" />
+      <View title="Orange" backgroundColor="orange" icon = "/images/icon2.png" />
+      <View title="Red" backgroundColor="red" icon = "/images/icon2.png" />
     </ScrollableView>
 	</Window>
 </Alloy>
@@ -41,7 +39,10 @@ Here's the complete example from the above gif:
 "#paging" : {
 	top: 0,
 	indicatorColor: "#09c",
-	tabs: true
+	tabs: true,
+    currentTab: 3,
+    expand: true,
+    rtl: true
 }
 ```
 `index.js`
@@ -63,6 +64,9 @@ $.index.open();
 * `tabs` (Boolean) - wether to use tabs or only the indicator
 * `tabWidth` - if not passed a default tabWidth of a quarter of the total with is used
 * `dividerColor` - Color of the divider between the tabs
+* `rtl` - right to left support. default is false
+* `expand` - if set true the width tabs adjusted with screen width, if set false the tab enabled scrolling. default is false
+* `currentTab` - default is 1
 
 #### Methods
 
